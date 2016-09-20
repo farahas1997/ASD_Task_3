@@ -192,16 +192,22 @@ void printInfo(List *L) {
     //----------------------------------------
 }
 
-
-void insertAfter(address *Prec, address P) {
+void insertAfter(address Prec, address P) {
     /**
     * IS : Prec dan P tidak NULL
     * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : Kak Fajar
-
+    // NIM : 1301140165
+        Prec=alokasi(x);
+        P=L.first->next;
+        if(p->next=NULL){
+            Prec->next=p;
+            L.first->next=Prec;
+        }else{
+            cout<<"insert gagal karena next(p) tidak NULL";
+        }
 
     //----------------------------------------
 

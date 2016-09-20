@@ -19,7 +19,7 @@ address sentinelSearch(List *L, infotype x){
 
 }
 
-void insertionSort(List *L){
+void insertionSort(List &L){
     /**
     * IS : List mungkin kosong
     * PR : mengurutkan elemen di dalam List L menggunakan algoritma insertion sort
@@ -27,9 +27,35 @@ void insertionSort(List *L){
     */
 
     //-------------your code here-------------
-    // NIM : Kak Fajar
-
-
+    // NIM : 1301140165
+    int temp,ketemu,z;
+    temp=NULL;
+        if((L.first==NULL)||(L.first)->next==NULL){
+            return;
+        }
+        p=next(L.first);
+        while(p!=NULL){
+            z=P->info;
+            ketemu=0;
+            q=L.first;
+            while(q!=p){
+                if(q->info > p->info&&ketemu==0){
+                    z=q->info;
+                    q->info = p->info;
+                    ketemu = 1;
+                    q=q->next;
+                }else{
+                    if(ketemu==1){
+                        temp=z;
+                        z=q->info;
+                        q->info=temp;
+                    }
+                    q=q->next;
+                }
+            }
+            q->info=z;
+            p=p->next;
+        }
     //----------------------------------------
 }
 
