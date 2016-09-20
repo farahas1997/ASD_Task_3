@@ -1,8 +1,10 @@
 #include "list.h"
 #include "operasi.h"
+#include <iostream>
+using namespace std;
 
 
-address sentinelSearch(List L, infotype x){
+address sentinelSearch(List *L, infotype x){
     /**
     * IS : List mungkin kosong
     * PR : mencari elemen dengan ID infotype = infotype x menggunakan bantuan sentinel
@@ -10,14 +12,14 @@ address sentinelSearch(List L, infotype x){
     *      mengembalikan NULL jika tidak ditemukan
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : Dedep
 
 
     //----------------------------------------
 
 }
 
-void insertionSort(List &L){
+void insertionSort(List *L){
     /**
     * IS : List mungkin kosong
     * PR : mengurutkan elemen di dalam List L menggunakan algoritma insertion sort
@@ -25,7 +27,7 @@ void insertionSort(List &L){
     */
 
     //-------------your code here-------------
-    // NIM : 
+    // NIM : Kak Fajar
 
 
     //----------------------------------------
@@ -40,8 +42,8 @@ void deletebyID(List &L, infotype x) {
 
     address Prec, P;
     //-------------your code here-------------
-    // NIM : 
+    // NIM :
 
-	
+
     //----------------------------------------
 }

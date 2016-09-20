@@ -17,16 +17,24 @@
 	"list.h"
 	"operasi.h"
 
-1474103111 source:d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\list.cpp
+1474390128 source:d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\list.cpp
 	"list.h"
-
-1474122475 d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\list.h
 	<iostream>
 
-1474103111 source:d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\operasi.cpp
+1474389997 d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474389905 source:d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\operasi.cpp
 	"list.h"
 	"operasi.h"
+	<iostream>
 
-1474103111 d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\operasi.h
+1474389803 d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\operasi.h
 	"list.h"
+	<iostream>
+
+1474390288 source:d:\data\tel-u\tugas\(asd) algoritma dan struktur data\github\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
 
