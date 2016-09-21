@@ -148,9 +148,11 @@ void deleteFirst(List *L, address &P) {
     */
     //-------------your code here-------------
     // NIM : Hardo
-
-
-
+    P = L->first;
+    if ( P != NULL){
+        L->first = P->next;
+        delete P;
+    }
     //----------------------------------------
 }
 
@@ -161,7 +163,21 @@ void deleteLast(List *L, address &P) {
     */
     //-------------your code here-------------
     // NIM : Hardo
-
+    if (L->first != NULL){
+        {
+            P = L->first;
+            if (P->next == NULL){
+                L->first = NULL;
+                delete P;
+            }
+            else{
+                while (next(P->next) != NULL){
+                    P = P->next;
+                    P->next = NULL;
+                }
+            }
+        }
+    }
 
 
     //----------------------------------------

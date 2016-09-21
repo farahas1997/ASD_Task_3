@@ -38,3 +38,20 @@
 	"list.h"
 	"operasi.h"
 
+1474476991 source:d:\strukdat\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474476991 d:\strukdat\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474476991 d:\strukdat\asd_task_3\linkedlist\operasi.h
+	"list.h"
+	<iostream>
+
+1474476991 source:d:\strukdat\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+	<iostream>
+
