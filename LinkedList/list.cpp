@@ -93,7 +93,15 @@ void insertFirst(List *L, address P)
     */
     //-------------your code here-------------
     // NIM : Dedep
-
+    if (L.first != NULL)
+    {
+        L.first = P;
+    }
+    else
+    {
+        P->next = L.first;
+        L.first = NULL;
+    }
     //----------------------------------------
 }
 
@@ -156,11 +164,13 @@ void deleteFirst(List *L, address &P)
     //-------------your code here-------------
     // NIM : Hardo
     P = L->first;
-    if ( P->next != NULL){
+    if ( P->next != NULL)
+    {
         L->first = P->next;
         dealokasi(P);
     }
-    else{
+    else
+    {
         L->first = NULL;
         dealokasi(P);
     }
@@ -175,15 +185,19 @@ void deleteLast(List *L, address &P)
     */
     //-------------your code here-------------
     // NIM : Hardo
-    if (L->first != NULL){
+    if (L->first != NULL)
+    {
         {
             P = L->first;
-            if (P->next == NULL){
+            if (P->next == NULL)
+            {
                 L->first = NULL;
                 delete P;
             }
-            else{
-                while (next(P->next) != NULL){
+            else
+            {
+                while (next(P->next) != NULL)
+                {
                     P = P->next;
                     P->next = NULL;
                 }
@@ -256,7 +270,8 @@ void deleteAfter(address *Prec, address &P)
     */
     //-------------your code here-------------
     // NIM : Hardo
-    if (Prec->next != NULL){
+    if (Prec->next != NULL)
+    {
         P = next(Prec);
         next(Prec) = next(P);
         dealokasi(P);
