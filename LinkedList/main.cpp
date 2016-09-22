@@ -71,7 +71,7 @@ void mainMenu(){
     case '2' :
         createKaryawan(&datastuff);
         P = createElement(datastuff);
-        insertAfter(&Prec,P);
+        insertAfter(*Prec,P);
         goto MenuLabel;
 
     case '3' :

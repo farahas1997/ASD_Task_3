@@ -29,31 +29,32 @@ void insertionSort(List &L){
     //-------------your code here-------------
     // NIM : 1301140165
     int temp,ketemu,z;
+    address p,q;
     temp=NULL;
         if((L.first==NULL)||(L.first)->next==NULL){
             return;
         }
         p=next(L.first);
         while(p!=NULL){
-            z=P->info;
+            z=p->info.id;
             ketemu=0;
             q=L.first;
             while(q!=p){
-                if(q->info > p->info&&ketemu==0){
-                    z=q->info;
-                    q->info = p->info;
+                if(q->info.id > p->info.id&&ketemu==0){
+                    z=q->info.id;
+                    q->info.id = p->info.id;
                     ketemu = 1;
                     q=q->next;
                 }else{
                     if(ketemu==1){
                         temp=z;
-                        z=q->info;
-                        q->info=temp;
+                        z=q->info.id;
+                        q->info.id=temp;
                     }
                     q=q->next;
                 }
             }
-            q->info=z;
+            q->info.id=z;
             p=p->next;
         }
     //----------------------------------------

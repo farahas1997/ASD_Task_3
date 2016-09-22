@@ -38,3 +38,24 @@
 	"list.h"
 	"operasi.h"
 
+1474391687 source:d:\github\asd_task_3\linkedlist\main.cpp
+	<iostream>
+	"list.h"
+	"operasi.h"
+
+1474548701 d:\github\asd_task_3\linkedlist\list.h
+	<iostream>
+
+1474391687 d:\github\asd_task_3\linkedlist\operasi.h
+	"list.h"
+	<iostream>
+
+1474554934 source:d:\github\asd_task_3\linkedlist\list.cpp
+	"list.h"
+	<iostream>
+
+1474555522 source:d:\github\asd_task_3\linkedlist\operasi.cpp
+	"list.h"
+	"operasi.h"
+	<iostream>
+

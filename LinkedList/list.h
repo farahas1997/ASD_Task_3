@@ -33,7 +33,7 @@ using namespace std;
 
 struct stuff{
 	int id;
-    //------------- your code here -----------
+    //------------- y our code here -----------
     string nama;
     string divisi;
     string jabatan;

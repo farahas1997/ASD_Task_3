@@ -47,7 +47,8 @@ int countElement(List *L)
     return count;
 }
 
-void createList(List &L) {
+void createList(List &L)
+{
     /**
     * FS : first(L) diset Nil
     */
@@ -57,7 +58,8 @@ void createList(List &L) {
     //----------------------------------------
 }
 
-address alokasi(infotype x) {
+address alokasi(infotype x)
+{
     /**
     * FS : mengembalikan elemen list baru dengan info = x, next elemen = Nil
     */
@@ -67,12 +69,13 @@ address alokasi(infotype x) {
     // NIM : 1301154202
     P = new elmlist;
     P->info = x;
-	P->next = NULL;
+    P->next = NULL;
     //----------------------------------------
     return P;
 }
 
-void dealokasi(address &P) {
+void dealokasi(address &P)
+{
     /**
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
@@ -82,7 +85,8 @@ void dealokasi(address &P) {
     //----------------------------------------
 }
 
-void insertFirst(List *L, address P) {
+void insertFirst(List *L, address P)
+{
     /**
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
@@ -93,28 +97,30 @@ void insertFirst(List *L, address P) {
     //----------------------------------------
 }
 
-void insertLast(List *L, address P) {
+void insertLast(List *L, address P)
+{
     /**
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
     //-------------your code here-------------
     // NIM : 1301154202
-if(L->first == NULL)
+    if(L->first == NULL)
         L->first = P;
     else
-        {
-            address Q;
-            Q = L->first;
-            while(next(Q) != NULL)
+    {
+        address Q;
+        Q = L->first;
+        while(next(Q) != NULL)
             Q = next(Q);
-            P->next = NULL;
-            Q->next = P;
-        }
+        P->next = NULL;
+        Q->next = P;
+    }
     //----------------------------------------
 }
 
-address findElm(List *L, infotype x) {
+address findElm(List *L, infotype x)
+{
     /**
     * IS : List L mungkin kosong
     * FS : mengembalikan elemen dengan info.ID = x.ID,
@@ -141,7 +147,8 @@ address findElm(List *L, infotype x) {
     return P;
 }
 
-void deleteFirst(List *L, address &P) {
+void deleteFirst(List *L, address &P)
+{
     /**
     * IS : List L mungkin kosong
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
@@ -154,7 +161,8 @@ void deleteFirst(List *L, address &P) {
     //----------------------------------------
 }
 
-void deleteLast(List *L, address &P) {
+void deleteLast(List *L, address &P)
+{
     /**
     * IS : List L mungkin kosong
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
@@ -167,7 +175,8 @@ void deleteLast(List *L, address &P) {
     //----------------------------------------
 }
 
-void printInfo(List *L) {
+void printInfo(List *L)
+{
     /**
     * FS : menampilkan info seluruh elemen list L
     */
@@ -192,7 +201,8 @@ void printInfo(List *L) {
     //----------------------------------------
 }
 
-void insertAfter(address Prec, address P) {
+void insertAfter(address *Prec, address P)
+{
     /**
     * IS : Prec dan P tidak NULL
     * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
@@ -200,19 +210,25 @@ void insertAfter(address Prec, address P) {
     */
     //-------------your code here-------------
     // NIM : 1301140165
-        Prec=alokasi(x);
-        P=L.first->next;
-        if(p->next=NULL){
-            Prec->next=p;
-            L.first->next=Prec;
-        }else{
-            cout<<"insert gagal karena next(p) tidak NULL";
-        }
+    infotype x;
+    address Q,L;
+    P=new elmlist;
+    Prec=(next(L->next));
+    if(P->next=NULL)
+    {
+        (P->next)=Prec;
+        (next(L->next))=P;
+    }
+    else
+    {
+        cout<<"insert gagal karena next(p) tidak NULL";
+    }
 
     //----------------------------------------
 
 }
-void deleteAfter(address *Prec, address &P) {
+void deleteAfter(address *Prec, address &P)
+{
     /**
     * IS : Prec tidak NULL
     * FS : elemen yang berada di belakang elemen Prec dilepas
