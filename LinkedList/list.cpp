@@ -89,7 +89,15 @@ void insertFirst(List *L, address P) {
     */
     //-------------your code here-------------
     // NIM : Dedep
-
+        if (L->first != NULL)
+        {
+            P = L->first;
+        }
+        else
+        {
+            P->next = L->first;
+            L->first = P;
+        }
     //----------------------------------------
 }
 
@@ -211,7 +219,7 @@ void insertAfter(address Prec, address P) {
 
     //----------------------------------------
 
-}
+
 void deleteAfter(address *Prec, address &P) {
     /**
     * IS : Prec tidak NULL
