@@ -256,7 +256,11 @@ void deleteAfter(address *Prec, address &P)
     */
     //-------------your code here-------------
     // NIM : Hardo
-
+    if (Prec->next != NULL){
+        P = next(Prec);
+        next(Prec) = next(P);
+        dealokasi(P);
+    }
 
     //----------------------------------------
 }
