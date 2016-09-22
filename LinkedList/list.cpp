@@ -149,9 +149,13 @@ void deleteFirst(List *L, address &P) {
     //-------------your code here-------------
     // NIM : Hardo
     P = L->first;
-    if ( P != NULL){
+    if ( P->next != NULL){
         L->first = P->next;
-        delete P;
+        dealokasi(P);
+    }
+    else{
+        L->first = NULL;
+        dealokasi(P);
     }
     //----------------------------------------
 }
@@ -236,7 +240,12 @@ void deleteAfter(address *Prec, address &P) {
     */
     //-------------your code here-------------
     // NIM : Hardo
-
+    if (Prec->next != NULL)
+    {
+        P = next(Prec);
+        next(Prec) = next(P);
+        dealokasi(P);
+    }
 
     //----------------------------------------
 }
