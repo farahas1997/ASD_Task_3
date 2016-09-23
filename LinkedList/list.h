@@ -33,7 +33,7 @@ using namespace std;
 
 struct stuff{
 	int id;
-    //------------- y our code here -----------
+    //------------- your code here -----------
     string nama;
     string divisi;
     string jabatan;
@@ -57,20 +57,19 @@ struct List{
     //----------------------------------------
 };
 
-address createElement(stuff addstuff);
-void createKaryawan(stuff *addstuff);
+void createKaryawan(infotype *x);
 int countElement(List *L);
 void createList(List &L);
 address alokasi(infotype x);
 void dealokasi(address &P);
 void insertFirst(List *L, address P);
 void insertLast(List *L, address P);
-address findElm(List *L, infotype x);
+address findElm(List L, infotype x);
 void deleteFirst(List *L, address &P);
 void deleteLast(List *L, address &P);
 void printInfo(List *L);
-void insertAfter(address *Prec, address P);
-void deleteAfter(address *Prec, address &P);
+void insertAfter(List *L, address P);
+void deleteAfter(List *L, address &P);
 
 
 #endif // LIST_H_INCLUDED

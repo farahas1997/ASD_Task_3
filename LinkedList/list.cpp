@@ -2,31 +2,18 @@
 #include <iostream>
 using namespace std;
 
-address createElement(stuff addstuff)
-{
-    address P;
-    P = new elmlist;
-    P->next = NULL;
-    P->info.id = addstuff.id;
-    P->info.nama = addstuff.nama;
-    P->info.divisi = addstuff.divisi;
-    P->info.jabatan = addstuff.jabatan;
-    P->info.gaji = addstuff.gaji;
-    return P;
-}
-
-void createKaryawan(stuff *addstuff)
+void createKaryawan(infotype *x)
 {
     cout<<"Masukkan ID      : ";
-    cin>>addstuff->id;
+    cin>>x->id;
     cout<<"Masukkan Nama    : ";
-    cin>>addstuff->nama;
+    cin>>x->nama;
     cout<<"Masukkan Divisi  : ";
-    cin>>addstuff->divisi;
+    cin>>x->divisi;
     cout<<"Masukkan Jabatan : ";
-    cin>>addstuff->jabatan;
+    cin>>x->jabatan;
     cout<<"Masukkan Gaji    : ";
-    cin>>addstuff->gaji;
+    cin>>x->gaji;
     cout<<endl;
 }
 
@@ -47,80 +34,88 @@ int countElement(List *L)
     return count;
 }
 
-void createList(List &L)
-{
+void createList(List &L) {
     /**
     * FS : first(L) diset Nil
     */
     //-------------your code here-------------
-    // NIM : 1301154202
+    // NIM : 1301154202 / Fadhlan
     L.first = NULL;
     //----------------------------------------
 }
 
-address alokasi(infotype x)
-{
+address alokasi(infotype x) {
     /**
     * FS : mengembalikan elemen list baru dengan info = x, next elemen = Nil
     */
 
     address P;
     //-------------your code here-------------
-    // NIM : 1301154202
+    // NIM : 1301154202 / Fadhlan
     P = new elmlist;
     P->info = x;
-    P->next = NULL;
+	P->next = NULL;
+
+	P->info.id = x.id;
+    P->info.nama = x.nama;
+    P->info.divisi = x.divisi;
+    P->info.jabatan = x.jabatan;
+    P->info.gaji = x.gaji;
     //----------------------------------------
     return P;
 }
 
-void dealokasi(address &P)
-{
+void dealokasi(address &P) {
     /**
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
     //-------------your code here-------------
-    // NIM : 1301154202
+    // NIM : 1301154454 / Dedep
     delete P;
     //----------------------------------------
 }
 
-void insertFirst(List *L, address P)
-{
+void insertFirst(List *L, address P) {
     /**
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
     */
     //-------------your code here-------------
-    // NIM : Dedep
-
+    // NIM : 1301154454 / Dedep
+     if (L->first == NULL)
+        {
+            L->first = P;
+        }
+        else
+        {
+            P->next = L->first;
+            L->first = P;
+        }
     //----------------------------------------
 }
 
-void insertLast(List *L, address P)
-{
+void insertLast(List *L, address P) {
     /**
     * IS : List L mungkin kosong
     * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
     */
     //-------------your code here-------------
-    // NIM : 1301154202
+    // NIM : 1301154202 / Fadhlan
     if(L->first == NULL)
         L->first = P;
     else
-    {
-        address Q;
-        Q = L->first;
-        while(next(Q) != NULL)
+        {
+            address Q;
+            Q = L->first;
+            while(next(Q) != NULL)
             Q = next(Q);
-        P->next = NULL;
-        Q->next = P;
-    }
+            P->next = NULL;
+            Q->next = P;
+        }
     //----------------------------------------
 }
 
-address findElm(List *L, infotype x)
-{
+address findElm(List L, infotype x) {
     /**
     * IS : List L mungkin kosong
     * FS : mengembalikan elemen dengan info.ID = x.ID,
@@ -129,8 +124,9 @@ address findElm(List *L, infotype x)
 
     address P;
     //-------------your code here-------------
-    // NIM : 1301154202
-    P = L->first;
+    // NIM : 1301154454 / Dedep
+
+    P = L.first;
     while ((info(P).id != x.id) && (next(P) != NULL))
     {
         P = next(P);
@@ -147,41 +143,63 @@ address findElm(List *L, infotype x)
     return P;
 }
 
-void deleteFirst(List *L, address &P)
-{
+void deleteFirst(List *L, address &P) {
     /**
     * IS : List L mungkin kosong
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : Hardo
-
-
+    // NIM : 1301154216 / Hardo
+    P = L->first;
+    if ( P != NULL){
+        L->first = P->next;
+        dealokasi(P);}
+    else{
+        cout << "List kosong" << endl;
+    }
 
     //----------------------------------------
 }
 
-void deleteLast(List *L, address &P)
-{
+void deleteLast(List *L, address &P) {
     /**
     * IS : List L mungkin kosong
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : Hardo
+    // NIM : 1301154216 / Hardo
+    if (L->first != NULL)
+    {
 
-
+        if (countElement(L) == 1)
+            deleteFirst(L, P);
+        else
+        {
+            address Prec;
+            P = L->first;
+            while (P->next != NULL)
+            {
+                Prec = P;
+                P = P->next;
+            }
+            Prec->next = NULL;
+            delete P;
+        }
+    }
+    else
+    {
+        cout<<"List Kosong tidak Ada Elemen"<<endl;
+    }
 
     //----------------------------------------
 }
 
-void printInfo(List *L)
-{
+void printInfo(List *L) {
     /**
     * FS : menampilkan info seluruh elemen list L
     */
     //-------------your code here-------------
-    // NIM : 1301154202
+    // NIM : 1301154202 / Fadhlan
     address P;
     P = L->first;
     int i = 1;
@@ -201,43 +219,103 @@ void printInfo(List *L)
     //----------------------------------------
 }
 
-void insertAfter(address *Prec, address P)
-{
+
+void insertAfter(List *L, address P) {
     /**
     * IS : Prec dan P tidak NULL
     * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
     *      ditunjuk pointer Prec
     */
     //-------------your code here-------------
-    // NIM : 1301140165
-    infotype x;
-    address Q,L;
-    P=new elmlist;
-    Prec=(next(L->next));
-    if(P->next=NULL)
+    // NIM : 1301140165 / Fajar
+    /* infotype x;
+ -        P=L.first->next;		 +    address Q,L;
+ -        if(p->next=NULL){		 +    P=new elmlist;
+ -            Prec->next=p;		 +    Prec=(next(L->next));
+ -            L.first->next=Prec;		 +    if(P->next=NULL)
+ -        }else{		 +    {
+ -            cout<<"insert gagal karena next(p) tidak NULL";		 +        (P->next)=Prec;
+ -        }		 +        (next(L->next))=P;
+ +    }
+ +    else
+ +    {
+ +        cout<<"insert gagal karena next(p) tidak NULL";
+ +    }*/
+    int totElm = countElement(L);
+    int x;
+    address Prec;
+    if (L->first != NULL)
     {
-        (P->next)=Prec;
-        (next(L->next))=P;
+        cout<<"Ada "<< totElm <<" Elemen \n";
+        cout <<"Masukan posisi Elemen yang ingin Anda input : ";
+        cin>>x;
+        if (x > 0 && x <= totElm)
+        {
+            Prec = L->first ;
+            for (int i=1; i<x-1; i++)
+            {
+                Prec = Prec->next;
+            }
+            P->next = Prec->next;
+            Prec->next = P;
+        }
     }
     else
     {
-        cout<<"insert gagal karena next(p) tidak NULL";
+        insertFirst(L,P);
     }
-
     //----------------------------------------
-
 }
-void deleteAfter(address *Prec, address &P)
-{
+
+
+void deleteAfter(List *L, address &P) {
     /**
     * IS : Prec tidak NULL
     * FS : elemen yang berada di belakang elemen Prec dilepas
     *      dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : Hardo
-
-
+    // NIM : 1301140165 / Hardo
+    /*if (Prec->next != NULL)
+     {
+         P = next(Prec);
+         next(Prec) = next(P);
+         dealokasi(P);
+     }*/
+    int totElm = countElement(L);
+    int x;
+    address Prec;
+    if (L->first != NULL)
+    {
+        cout<<"Ada "<<totElm<<" Elemen \n";
+        if (countElement(L) == 1)
+        {
+            cout << "Akan menghapus list pertama"<<endl;
+            deleteFirst(L,P);
+        }
+        else
+        {
+            cout <<"Masukan posisi Elemen yang ingin Anda delete : ";
+            cin>>x;
+            cin.ignore();
+        }
+        if (x>0 && x<=totElm)
+        {
+            Prec = L->first;
+            for (int i=1; i<x-1; i++)
+            {
+                Prec = Prec->next;
+            }
+            P = Prec->next;
+            Prec->next = P->next;
+            P->next = NULL;
+            delete P;
+        }
+    }
+    else
+    {
+        cout<<"Maaf, List kosong"<<endl;
+    }
     //----------------------------------------
 }
 
